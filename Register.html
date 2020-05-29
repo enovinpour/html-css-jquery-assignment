@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Registeration!</title>
+		<style="text/css">
+		<link href="mystyles.css" rel="stylesheet"/>
+		</style>
+		<script>
+			function validate(myForm)
+			{
+				var message = "";
+				if (myForm.fname.value == "")
+				{
+					message += "First Name must have a value <br>";
+				}
+				if (myForm.lname.value == "")
+				{
+					message += "Last Name must have a value <br>";
+				}
+				if (myForm.email.value == "")
+				{
+					message += "Email must have a value <br>";
+				}				
+				if (myForm.postal.value == "")
+				{
+					message += "Postal Code must have a value <br>";
+				}
+				if (message == "")
+				{
+					document.getElementById("mymessage").innerHTML = "";
+					return confirm("Form is valid, continue submitting?");
+				}
+				else
+				{
+					document.getElementById("mymessage").innerHTML = message;
+					return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+	
+	<header>
+		<br>
+		&nbsp;&nbsp;&nbsp;<img src="EZTravelsCompanyLogo.png" alt="CompanyLogo">
+		<br><br><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Registration!
+	</header>
+
+	<section>
+	<form method="get" action="bouncer.php">
+		<!--<ol>
+			<ul style="list-style-type:none;">
+				Name:&nbsp;<input type="text" name="fname"/><br>
+				Last Name:&nbsp;<input type="text" name="lname"/><br>
+				DOB:&nbsp;&nbsp;<input type="date" name="bdate"/><br>
+				Email:&nbsp;&nbsp;<input type="email" name="email"/><br style="padding-bottom:10px;"></li>
+				Postal Code: <input type="text" name="postal"/><br>
+				Send me ads for future deals: <input type="checkbox" name="sendsspam"/><br>
+				<p>give us two of your favorite places so we can figure you out a little better!</p>
+				<select name="vacationdest" size="4" multiple="multiple">
+					<option value="MX">Mexico</option>
+					<option value="RD">Japan</option>
+					<option value="BF">Germany</option>
+					<option value="HI">Italy</option>
+					<option value="BZ">Brazil</option>
+					<option value="JC">Jamaica</option>
+					<option value="DB">Dubai</option>
+					<option value="Egypt">Egypt</option>
+				</select><br>
+			</ul>-->
+
+				Name:&nbsp;<input type="text" name="fname"/><br>
+				Last Name:&nbsp;<input type="text" name="lname"/><br>
+				DOB:&nbsp;&nbsp;<input type="date" name="bdate"/><br>
+				Email:&nbsp;&nbsp;<input type="email" name="email"/><br style="padding-bottom:10px;"></li>
+				Postal Code: <input type="text" name="postal"/><br>
+				Send me ads for future deals: <input type="checkbox" name="sendsspam"/><br>
+				<p>give us two of your favorite places so we can figure you out a little better!</p>
+				<select name="vacationdest" size="4" multiple="multiple">
+					<option value="MX">Mexico</option>
+					<option value="RD">Japan</option>
+					<option value="BF">Germany</option>
+					<option value="HI">Italy</option>
+					<option value="BZ">Brazil</option>
+					<option value="JC">Jamaica</option>
+					<option value="DB">Dubai</option>
+					<option value="Egypt">Egypt</option>
+				</select><br>
+				<button type="submit" value="Submit" onclick="return validate(this.form)">Submit!</button>
+				<button type="reset" value="Reset" onclick="return confirm('Continue working on form?')">Reset Fields</button>
+			</form>
+			<p id="mymessage" style="color:red"></p>
+	</section>
+
+	
+	</body>
+	
+</html>
